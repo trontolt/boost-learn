@@ -3,7 +3,6 @@
 
 html {
     font-family: 'Roboto', sans-serif;
-    color:  var(--g-color-light);
 }
 
 body {
@@ -13,11 +12,6 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-  
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
   
 .App {

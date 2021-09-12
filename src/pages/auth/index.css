@@ -1,0 +1,6 @@
+.auth-page {
+    display: flex;
+    background-color: rgb(111, 56, 173);
+    flex:1;
+    justify-content: center;
+}
