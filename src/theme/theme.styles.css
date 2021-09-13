@@ -28,12 +28,20 @@ body {
   --g-color-light: #fff;
   --g-color-dark: #000;
 
+  /* beige */
+  --g-color-beige: #F5F5DC;
+
   /* blue */
   --g-color-blue-dark:#192DA1;
   --g-color-blue-dark-2: #111E6C;
 
   /* gray */
-
   --g-color-gray: #898B8C;
+
+  /* green */
+  --g-color-green-cadet: #5F9EA0;
+
+  /* red */
+  --g-color-red-dark: #911E42;
 }
 

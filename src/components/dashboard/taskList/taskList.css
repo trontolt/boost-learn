@@ -1,0 +1,13 @@
+.tasks-array-container {
+    background-color: var(--g-color-red-dark);
+    flex-grow: 1;
+    display: inline-block;
+}
+.tasks-array-task {
+    float:left;
+    margin: 0.1rem 0 0 0.5rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    background-color: var(--g-color-beige);
+}
