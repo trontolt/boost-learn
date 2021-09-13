@@ -9,7 +9,7 @@ function App() {
        <p>Header</p>
             <BrowserRouter>
                 <AppRouter
-                    isLoggedIn={false}
+                    isLoggedIn={true}
                 />
             </BrowserRouter>
         <p>Footer</p>
