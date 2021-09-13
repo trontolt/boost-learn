@@ -1,4 +1,6 @@
 import { BrowserRouter} from 'react-router-dom';
+
+import Header from '../src/components/header/header';
 import {AppRouter} from './routes/index'
 
 import './App.css';
@@ -6,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-       <p>Header</p>
+       <Header/>
             <BrowserRouter>
                 <AppRouter
                     isLoggedIn={true}
