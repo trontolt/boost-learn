@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import {main} from './main.reducer';
 
 const rootReducer = () =>
   combineReducers({
-    admin: ()=> { return {name: 'test', secondName: 'second_test'}}
+    main
   });
   export default rootReducer;
