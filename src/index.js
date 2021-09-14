@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './theme/theme.styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,6 +7,8 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 
 import createStore from './core/createStore';
+
+import './theme/theme.styles.css';
 
 const history = createBrowserHistory();
 const store = createStore(history);

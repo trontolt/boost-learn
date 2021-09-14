@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route, Redirect, withRouter} from 'react-router-dom';
 import {routeAuth, routeDashboard} from '../constants/routes';
-import Auth from '../pages/auth';
-import Dashboard from '../pages/dashboard';
+import Auth from '../pages/auth/auth';
+import Dashboard from '../pages/dashboard/dashboard';
 
 const GuestRouter = () => (
     <Router>

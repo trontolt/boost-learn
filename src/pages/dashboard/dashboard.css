@@ -1,0 +1,9 @@
+.dashboard-page {
+    display: flex;
+    flex:1;
+    justify-content: flex-start;
+    /* background-color: white; */
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 1;
+}
