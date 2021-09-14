@@ -1,8 +1,10 @@
 import './header.css'
 
-const Header = () => {
+const Header = (props) => {
+    const { viewedShortDesc } = props;
+    console.log(viewedShortDesc)
     return (
-        <div className="header-container"> HEader new</div>
+        <div className="header-container">{viewedShortDesc.shortDesc}</div>
     )
 }
 

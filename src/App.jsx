@@ -1,19 +1,18 @@
 import { BrowserRouter} from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import Header from '../src/components/header/header';
-import { setViewedTitleIndex } from './core/actions/main.action'
 import {AppRouter} from './routes/index'
 
 import './App.css';
 
 function App(props) {
-  const { setViewedTitleIndex } = props;
+  const { viewedTitleIndex, tasksArray } = props;
+  const viewedShortDesc = tasksArray && tasksArray[viewedTitleIndex]
   return (
     <div className="App">
-       <Header/>
+       <Header viewedShortDesc={viewedShortDesc} />
             <BrowserRouter>
                 <AppRouter
-                    setViewedTitleIndex={setViewedTitleIndex}
                     isLoggedIn={true}
                 />
             </BrowserRouter>
@@ -24,7 +23,7 @@ function App(props) {
 
 
 export default connect((state)=>({
-  selectedTitleIndex: state.selectedTitleIndex
+  viewedTitleIndex: state.main.viewedTitleIndex,
+  tasksArray: state.main.tasksArray
 }), {
-  setViewedTitleIndex
 })(App)
