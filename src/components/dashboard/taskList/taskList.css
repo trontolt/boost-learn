@@ -11,3 +11,6 @@
     cursor: pointer;
     background-color: var(--g-color-beige);
 }
+ul {
+    text-align: left;
+}

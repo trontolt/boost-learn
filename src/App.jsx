@@ -1,24 +1,22 @@
 import { BrowserRouter} from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import Header from '../src/components/header/header';
-import {AppRouter} from './routes/index'
+import { AppRouter } from './routes/index';
 
 import './App.css';
 
 function App(props) {
-  const { viewedTitleIndex, tasksArray } = props;
-  const viewedShortDesc = tasksArray && tasksArray[viewedTitleIndex]
-  return (
-    <div className="App">
-       <Header viewedShortDesc={viewedShortDesc} />
+    const { viewedTitleIndex, tasksArray } = props;
+    const viewedTask = tasksArray && tasksArray[viewedTitleIndex];
+    return (
+        <div className="App">
+            <Header viewedShortDesc={viewedTask.shortDesc} />
             <BrowserRouter>
-                <AppRouter
-                    isLoggedIn={true}
-                />
+                <AppRouter isLoggedIn={true} />
             </BrowserRouter>
-        <p>Footer</p>
-    </div>
-  );
+            <p>Footer</p>
+        </div>
+    );
 }
 
 

@@ -9,11 +9,24 @@
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 90%; 
   }
+
+.modal-title {
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.modal-short {
+  margin: 1rem;
+}
+.modal-description {
+  background-color: var(--g-color-beige);
+  margin-bottom: 2rem;
+}
   
   /* The Close Button */
   .close {

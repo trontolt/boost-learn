@@ -1,10 +1,13 @@
-import './header.css'
+import { useEffect } from 'react';
+import './header.css';
 
-const Header = (props) => {
+const Header = props => {
     const { viewedShortDesc } = props;
-    return (
-        <div className="header-container">{viewedShortDesc.shortDesc}</div>
-    )
-}
+    useEffect(() => {
+        document.getElementsByClassName('header-container')[0].innerHTML =
+            viewedShortDesc;
+    }, [viewedShortDesc]);
+    return <div className="header-container"></div>;
+};
 
 export default Header;

@@ -10,14 +10,13 @@ const Dashboard = props => {
     const dispatch = useDispatch();
     const [isModalOpen, toggleModalOpen] = useState(false);
     const { tasksArray, viewedTitleIndex } = props;
-    let taskData = tasksArray[viewedTitleIndex].description;
+    let taskData = tasksArray[viewedTitleIndex];
     const setIndex = index => {
         dispatch(setViewedTitleIndex(index));
     };
     const toggleModal = () => {
         toggleModalOpen(!isModalOpen);
     };
-    console.log(isModalOpen);
     return (
         <div className="dashboard-page">
             <TaskList
