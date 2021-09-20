@@ -3,3 +3,7 @@
     flex:1;
     justify-content: flex-start;
 }
+
+.code-example {
+    color:var(--g-color-red-dark);
+}
