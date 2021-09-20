@@ -1,5 +1,5 @@
 .tasks-array-container {
-    background-color: var(--g-color-red-dark);
+    background-color: #F0F0F3;
     flex-grow: 1;
     display: inline-block;
 }
@@ -7,9 +7,12 @@
     float:left;
     margin: 0.1rem 0 0 0.5rem;
     padding: 0.2rem;
-    border-radius: 0.4rem;
     cursor: pointer;
-    background-color: var(--g-color-beige);
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.tasks-array-task:hover {
+    box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 ul {
     text-align: left;
