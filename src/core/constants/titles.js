@@ -78,5 +78,26 @@ export const titlesWithDescription = [
         title: "Тестирование", 
         shortDesc:"<strong>BDD</strong> behaviour driven development (тесты, документация, примеры использования) <br> <code><span class='code-example'>describe ('Заголовок', function () { <br>it ('Описание', function () { <br> assert.equal (pow(2,3), 8) <br> }}</span></code> <br> <strong>Mocha</strong> - функции тестирования (describe, it, функции запуска тестов) <br> <strong>Chai</strong> - функции проверки утверждений <br> <strong>Sinon</strong> - наблюдение за функциями, эмулирование встроенных функций",
         description :"describe ('Test', function () { <br> before ( () => alert('before tests')); <br> after ( ()=> alert('after tests')); <br> beforeEach ( ()=> alert ('before each test')) <br> afterEach ( ()=> alert ('after each test')); <br> it ('Возводит в степень n', function () { <br> assert.equal(pow(x,2), result); <br> });"
+    }, 
+    {
+        title: "Полифилы, Babel",
+        shortDesc: "Полифил - код, реализующий функциональность, которая не поддерживается в некоторых версиях веб-браузеров <br> Babel – это транспилер и полифил. Он переписывает современный JavaScript-код в предыдущий стандарт и реализовывает новые функции в старом стандарте.",
+        description: ""
+    }, 
+    {
+        title:"Объект",
+        shortDesc: "<ul><li>let user = new Object (конструктор объекта)</li><li>let user = {} (литерал объекта, литеральная нотация)</li></ul> <br><code><span class='code-example'>const user = { <br> name: 'Dima', <br>}; </span></code><br><ol><li><code><span class='code-example'>user.name = 'Petya'</span></code> // сработает, т.к. const не позволяет только полностью заменить объект.</li><li><code><span class='code-example'>let user = {} <br> user['likes birds']; <br> alert (user['like birds'])</span></code> // сработает изза [];</li><li><code><span class='code-example'> let user = { <br> name: 'Dima', <br> age: 29 <br> } <br> let key = prompt('что узнать', 'name'); <br> alert (user[key]);</span></code> // Dima</li><li><code><span class='code-example'> let fruit = prompt ('Какой фрукт', 'apple'); <br> let bag = { <br> [fruit] : 5 </span></code>//взяли имя из переменной <br> <code><span class='code-example'>} <br> alert (bag[fruit])</span></code> // 5; </li></ol>", 
+        description: "Методы объекта: <ul><li> Object.keys(obj) – возвращает массив ключей. </li><li>Object.values(obj) – возвращает массив значений.</li><li>Object.entries(obj) – возвращает массив пар [ключ, значение].</li><li>Object.getOwnPropertySymbols, - массив только символьных ключей.</li><li>Reflect.ownKeys(obj), возвращает все ключи.</li></ul> <br> Проверка наличия свойства в объекте <br> <code><span class='code-example'>let user = { name: 'Olga'} <br> alert ('name' <strong>in</strong> user) //true <br><br> <strong>for</strong> (key <strong>in</strong> user) { <br> alert(user[key]) <br> `} "
+    }, 
+    {
+        title: "Клонирование/объединение объектов",
+        shortDesc: "<code><span class='code-example'>let user  = { <br> name: 'Dima', <br> age: 29, <br> }; <br> let clone = {}; <br><ol><li>for (let key in user) { <br> clone[key] = user[key]  <br>} </li><li>Object.assign(clone, [user])</li><li>cloneDeep(obj) - Lodash</li><li>function <strong>cloneDeep</strong> (targetObj, srcObj) { <br> for(let key in srcObj) { <br> if(typeof (srcObj[key] != 'object') <br> targetObj[key] = srcObj[key]; <br> } else { <br> targetObj[key] = {}; <br> cloneDeep(targetObj[key], srcObj[key]); <br> }};</li><li>let clone = {...user}</li></ol>",
+        description: ""
+    }, 
+    {
+        title: "Сборка мусора",
+        shortDesc: "<strong>Сборщик мусора</strong> - помечает корневые объекты, от них идет поссылкам и помечает другие объекты и т.д.. <br> Объекты, на которые нет внешних ссылок до корневых считаются недостижимыми и удаляются из памяти. <br><br> <strong>Оптимизации сборщика мусора</strong> <ol><li>Generational - делит объекты на новые и старые, старые проверяет реже</li><li>Incremental - поэтапно собирает мусор, делая много мелких задержек вместо одной большой</li><li>Idle - работает во время простоя процессора</li></ol>"
     }
+        
+
 ]

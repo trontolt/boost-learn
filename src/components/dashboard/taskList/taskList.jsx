@@ -9,8 +9,8 @@ const TaskList = props => {
                     <div
                         key={index}
                         className="tasks-array-task"
-                        onClick={openModal}
-                        onMouseOver={() => {
+                        onDoubleClick={openModal}
+                        onClick={() => {
                             setViewedTitleIndex(index);
                         }}
                     >

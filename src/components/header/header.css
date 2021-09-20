@@ -1,11 +1,12 @@
 .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 15rem;
     background-color: var(--g-color-beige);
     text-align: left;
     padding: 2rem;
     overflow: scroll;
+}
+
+.header-content{
+    width: fit-content;
+    margin: 0 auto;
 }
