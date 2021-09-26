@@ -82,8 +82,8 @@ export const titlesWithDescription = [
       },
       {
           title: "Function",
-          shortDesc: "Функция это фрагмент кода, к которому можно обратится по имени из другого места в коде. <br> <ul><li>Function declaration <code><span class='code-example'>function имя(параметры, через, запятую) {  /* тело, код функции */}</span></code> <br> (создается на стадии инициализации, до выполнения кода, может быть вызвана в любой части кода) <br> (В строгом режиме, когда Function Declaration находится в блоке {...}, функция доступна везде внутри блока. Но не снаружи него.)</li><li>Function expression <code><span class='code-example'>let sayHi <strong>=</strong> function() {alert( 'Привет' );};</span></code> <br> (создается в момент когда до нее дошло выполнение кода, может быть вызвана только дальше по ходу выполнения кода)</li><li> Стрелочная функция <code><span class='code-example'>let arrF = (n) <strong>=></strong> n + 3</span></code> <br> <ul><li> У стрелочной нет this, она берет его снаружи, где была вызвана </li><li>Ее нельзя вызывать с new (будет ошибка)</li><li>У нее нет ...arguments</li><li>У нее нет super</li></ul></li><li><code><span class='code-example'>let sum = new Function('a', 'b', 'return a + b');</span></code> <br> (Через new lexicalEnvironment - всегда global)</li></ul>",
-          description:"<ul><li>У функций могут быть <strong>Локальные</strong> переменные (объявленные внутри. Доступ к ним есть только внутри функции) и <strong>Внешние</strong> (объявленные не в функции, а снаружи. Доступ к ним имеется и за пределами функции)</li><li>У функций есть свойство <strong>name, length</strong> (указывает количество принимаемых аргументов)</li><li>Мы можем использовать функцию как объект, хранить в ней свойства, но они никак не влияют на её выполнение. Переменные – это не свойства функции и наоборот.</li><li><strong>NFE</strong> -  Named Function Expression. <code><span class='code-example'><let sayHi = function func(who) { <br> if (who) { alert(`Hello, $&#123;who}`); <br> } else {  func('Guest'); //вызывает себя же } };</span></code></li><li>У функций могут быть принимаемые параметры и параметры по умолчанию <code><span class='code-example'>function func(who, <strong>age = 19</strong>) { return age }</span></code></li></ul>"
+          shortDesc: "Функция это фрагмент кода, к которому можно обратится по имени из другого места в коде. <br> <ul><li>Function declaration <code><span class='code-example'>function имя(параметры, через, запятую) {  /* тело, код функции */}</span></code> <br> (создается на стадии инициализации, до выполнения кода, может быть вызвана в любой части кода) <br> (В строгом режиме, когда Function Declaration находится в блоке {...}, функция доступна везде внутри блока. Но не снаружи него.)</li><li>Function expression <code><span class='code-example'>let sayHi <strong>=</strong> function() {alert( 'Привет' );};</span></code> <br> (создается в момент когда до нее дошло выполнение кода, может быть вызвана только дальше по ходу выполнения кода)</li><li> Стрелочная функция <code><span class='code-example'>let arrF = (n) <strong>=></strong> n + 3</span></code> <br> <ul><li> У стрелочной нет this, она берет его снаружи, где была вызвана </li><li>Ее нельзя вызывать с new (будет ошибка)</li><li>У нее нет ...arguments</li><li>У нее нет super</li></ul></li><li><code><span class='code-example'>let sum = new Function('a', 'b', 'return a + b');</span></code> <br> (Хорошо подходит для создания функций, полученных из сервера строкой <br> Через new lexicalEnvironment - всегда global, тоесть данная функция имеет доступ только к глобальным переменным)</li></ul>",
+          description:"<ul><li>У функций могут быть <strong>Локальные</strong> переменные (объявленные внутри. Доступ к ним есть только внутри функции) и <strong>Внешние</strong> (объявленные не в функции, а снаружи. Доступ к ним имеется и за пределами функции)</li><li>У функций есть свойство <strong>name, length</strong> (указывает количество принимаемых аргументов)</li><li>Мы можем использовать функцию как объект, хранить в ней свойства, но они никак не влияют на её выполнение. Переменные – это не свойства функции и наоборот.</li><li><strong>NFE</strong> -  Named Function Expression. <br><code><span class='code-example'>let sayHi = function <strong>func</strong>s(who) { <br> if (who) { alert(`Hello, $&#123;who}`); <br> } else {  func('Guest'); //вызывает себя же } };</span></code></li><li>У функций могут быть принимаемые параметры и параметры по умолчанию <code><span class='code-example'>function func(who, <strong>age = 19</strong>) { return age }</span></code></li></ul>"
       },
     {
         title: "Тестирование", 
@@ -174,7 +174,67 @@ export const titlesWithDescription = [
         title: "Date",
         shortDesc: "<ol><li> <strong>new Date</strong> (); - создает объект Дата с текущим временем </li><li> <strong>new Date(2011, 0, 1, 0, 0, 0, 0)</strong>; - создает дату с указанным временем (месяц 0 - январь) </li><li><strong>getFullYear(), getMonth(), getDate(), getHours(), getMinutes(), getSeconds(), getMilliseconds()</strong> - возвращают соответсвующее время. (<strong>getUTCFullYear(), getUTCMonth(), getUTCDay()</strong>) соотвественно в ЮТС </li><li> <strong>getDay</strong>() - возвращает день недели (0-воскресенье) </li><li> <strong>getTime</strong>() - для заданной даты возвращает таймстамп в мс (Быстро работает, так как нет преобразования дат) </li><li> <strong>getTimezoneOffset</strong>() - разница в местном времени и ЮТС </li><li> <strong>setFullYear(year, [month], [date]), setMonth(month, [date]), setDate(date) ,setHours(hour, [min], [sec], [ms]), setMinutes(min, [sec], [ms]), setSeconds(sec, [ms]), setMilliseconds(ms), setTime(milliseconds)</strong>  (также есть эти же методы с ЮТС вариантом, кроме setTime() </li><li> <strong>Date.now()</strong> - текущее количество миллисекунд с 1.01.1970 - используется чаще всего для просчетов </li><li> <strong>Date.parse</strong>('2012-01-26T13:51:50.417-07:00'); // 1327611110417 (таймстамп)",
         description: ""
-    }
+    },
+    {
+        title: "JSON",
+        shortDesc: "JSON (JavaScript Object Notation) – это общий формат для представления значений и объектов. <ul><li>JSON.<strong>stringify</strong>(obj) - преобразовывает объект в строку (называется JSON-форматированный или сериализованный) </li><ul><li>Обращается к методу toJSON объектов.</li><li> Поддерживает Объекты, Массивы, строки, числа, логические значения true/false, null.</li><li>Пропускает *Свойства-функции (методы). *Символьные свойства. *Свойства, содержащие undefined.</li><li>НЕ конвертирует циклические объекты, то-есть указывающие друг на друга</ul></li><li><code><span class='code-example'>функция реплейсер: <br>alert( JSON.stringify(myObject, function replacer(key, value) { <br> alert(`$&#123key}: $&#123value}`);<br> return (key == 'occupiedBy') ? undefined : value; })); </span></code> //Если ключ не occupiedBy то серилизуем ключ, иначе возвращаем undefined</li><li>JSON.<strong>parse</strong>(str, [reviver]) - декодирует JSON строку в объект <code><span class='code-example'><br>функция ревьюер:<br> let str = '{'title':'Conference','date':'2017-11-30T12:00:00.000Z'}'; <br>let meetup = JSON.parse(str, function(key, value) { <br> if (key == 'date') return new Date(value);</span></code> // Если ключ == 'date, при преобразовании из JSON создадим объект Date как значение <br><code><span class='code-example'>return value; });</span></code></li></ul>",
+        description: ""
+    },
+    {
+        title: "Рекурсия, стек",
+        shortDesc: "Рекурсия и стек - прием программирования, в котором функция вызывает сама себя, передавая измененный параметр, до выполнения определенного условия. <ol><li> Контекст выполнения - структура данных, которая содержит информацию о месте в коде, локальных переменных функции, значение this и другую информацию о функции. </li><li> Глубина рекурсии - количество вложенных вызовов.</li></ol> <code><span class='code-example'> function pow(x, n) { <br> if (n == 1) { <br> return x;<br> } else { <br> return x * pow(x, n - 1);}} </span></code>",
+        description: ""
+    },
+     {
+         title: "Оператор расширен/Остаточные парам",
+         shortDesc: `<ol>
+                        <li>Остаточные параметры ...args 
+                            <ul>    
+                                <li>в конце списка аргументов функции</li>
+                                <li> function showName(firstName, lastName, ...titles) { }</li>
+                            </ul>
+                        </li>
+                        <li>старый метод arguments - псевдомассив, содержал все аргументы вместе с остаточными. хуже.</li>
+                        <li>Оператор расширения ... в вызове функции или где-либо ещё - Наоборот раскрывает массив <br><code><span class='code-example'> let arr1 = [1, -2, 3, 4]; <br> let arr2 = [8, 3, -8, 1];<br> 
+                                <ul>
+                                    <li> alert( Math.max(1, ...arr1, 2, ...arr2, 25) ); // 25 </li>
+                                    <li> let merged = [0, ...arr, 2, ...arr2]; // 0,3,5,1,2,8,9,15 </li>
+                                    <li> let str = 'Привет';   alert( [...str] ); // П,р,и,в,е,т </li>
+                                </ul>
+                    </ol>`,
+        description: ""
+     },
+     {
+         title: "Замыкание",
+         shortDesc: "Замыкание - это комбинация функции и лексического окружения, в котором эта функция была определена. Через ссылку environment функция получает доступ к переменным окружения где была создана. Создается каждый раз при создании функции. <br><br> У каждой функции, блока кода, скрипта есть связанный скрытый объект LexicalEnvironment, он состоит из двух частей: <ul><li> Environment Record - Объект в котором в свойствах - все локальные переменные и this </li><li> Ссылка на внешнее лексическое окружение - окружение снаружи текущих фигурных скобок </li></ul> Переменная – это свойство специального внутреннего объекта, связанного с текущим выполняющимся блоком/функцией/скриптом и мы на самом деле работаем с ним. <br> Новое лексическое окружение функции создаётся каждый раз, когда функция выполняется. Также для каждого блока кода типа if {} и для каждой итерации циклов",
+         description: ""
+     },
+     {
+         title: "var",
+         shortDesc: "var - переменная <ul><li>не имеет блочной области видимости</li><li> ограничивается только функцией или скриптом.</li><li> Объявляется (инициализируется) всегда вначале исполнения функции или скрипта движком, но значение ей присваивается по мере дохождения кода.</li></ul>",
+         description: ""
+     },
+     {
+         title: "Глобальный объект",
+         shortDesc: "Глобальный объект - в браузере <strong>window</strong>, в Node.js - <strong>global</strong><br><strong>globalThis</strong> - везде. В нем хранятся встроенные объекты, свойства окружения (innerHeight...)",
+         description: ""
+     },
+     {
+         title: "setTimeout/setInterval",
+         shortDesc: "<code><span class='code-example'> function sayHi(phrase, who) { alert( phrase + ', ' + who ); } <br> let timerId = <strong>setTimeout</strong>(sayHi, 1000, 'Привет', 'Джон')</span></code> - вызывает функцию однократно <br> <code><span class='code-example'>clearTimeout(timerId);</span></code> - очищает таймер <br> <code><span class='code-example'> let timerId = <strong>setInterval</strong>(() => alert('tick'), 2000);</span></code> - вызывает функцию с интервалом <br><br>Рекурсивный setTimeout <br><code><span class='code-example'> let timerId = setTimeout(function tick() { <br> alert('tick'); <br> timerId = setTimeout(tick, 2000); <br> }, 2000);</span></code> <br> setImmediate - в Node.js",
+         description: ""
+     },
+     {
+         title: "Декоратор",
+         shortDesc: `<strong>Декоратор</strong> - функция обертка, которая расширяет функционал переданной в нее функции.<br>
+         <code><span class='code-example'>function slow(x) { <br> // ресурсоемкие вычисления <br> return x; } <hr> function <strong>cachingDecorator</strong>(func) { <br> let cache = new Map(); <br> return function(x) { <br> if (cache.has(x)) {       // если кеш содержит такой x, <br> return cache.get(x);     // читаем из него результат <br> } <br> let result = func(x);   // иначе, вызываем функцию <br> cache.set(x, result);    // и кешируем (запоминаем) результат <br> return result  <br> }; } <br><br> slow = cachingDecorator(slow); <br> alert( slow(1) ); // slow(1) кешируем  <br> alert( "Again: " + slow(1) ); // возвращаем из кеша </span></code>`,
+         description: ""
+     },
+     {
+         title: "call/apply/bind",
+         shortDesc: "func(1, 2, 3);<hr> func.<strong>call</strong>(obj, 1, 2, 3) - вызывает функцию с явно установленным this и аргументами <br> func.<strong>apply</strong>(context, args); - вызывает функцию с явно установленным this,  принимает псевдомассив аргументов. <br> let funcUser = func.<strong>bind</strong>(user) - фиксирует this, даже, если он изменится, то останется зафиксированный. <br> Также можно передать аргументы, они привяжутся и будут всегда передаваться первыми (let double = mul.<strong>bind(null, 2)</strong>;) <br> если нужно зафиксировать контекс для всех методов - <strong>_.bindAll(obj) lodash</strong><br> роеализация bindAll <br><code><strong> for (let key in user) { <br> if (typeof user[key] == 'function') { <br> user[key] = user[key].bind(user); <br> }} </span></code>",
+         description: ""
+     }
         
 
 ]
