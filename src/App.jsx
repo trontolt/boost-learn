@@ -5,12 +5,13 @@ import { AppRouter } from './routes/index';
 
 import './App.css';
 
+import { getTaskData } from './utils/main';
+
 function App(props) {
-    const { viewedTitleIndex, tasksArray } = props;
-    const viewedTask = tasksArray && tasksArray[viewedTitleIndex];
+    const taskData = getTaskData(props);
     return (
         <div className="App">
-            <Header viewedShortDesc={viewedTask.shortDesc} />
+            <Header viewedShortDesc={taskData.shortDesc} />
             <BrowserRouter>
                 <AppRouter isLoggedIn={true} />
             </BrowserRouter>
@@ -19,9 +20,12 @@ function App(props) {
     );
 }
 
-
-export default connect((state)=>({
-  viewedTitleIndex: state.main.viewedTitleIndex,
-  tasksArray: state.main.tasksArray
-}), {
-})(App)
+export default connect(
+    state => ({
+        viewedTitleIndex: state.main.viewedTitleIndex,
+        viewedTopicIndex: state.main.viewedTopicIndex,
+        tasksArray: state.main.tasksArray,
+        tasksBomDomArr: state.main.tasksBomDomArr,
+    }),
+    {}
+)(App);

@@ -1,6 +1,5 @@
 .tasks-array-container {
     background-color: #F0F0F3;
-    flex-grow: 1;
     display: inline-block;
 }
 .tasks-array-task {
@@ -16,4 +15,9 @@
 }
 ul {
     text-align: left;
+}
+
+.tasks-array-container hr {
+    display:inline-block;
+    width: 100%;
 }
