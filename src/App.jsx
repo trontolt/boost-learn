@@ -11,7 +11,7 @@ function App(props) {
     const taskData = getTaskData(props);
     return (
         <div className="App">
-            <Header viewedShortDesc={taskData.shortDesc} />
+            <Header taskData={taskData} />
             <BrowserRouter>
                 <AppRouter isLoggedIn={true} />
             </BrowserRouter>
