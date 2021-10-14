@@ -1,11 +1,18 @@
 .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 15rem;
+    height: 20rem;
     background-color: var(--g-color-beige);
     text-align: left;
     padding: 2rem;
     overflow: scroll;
+}
+
+.header-content{
+    width: fit-content;
+    margin: 0 auto;
+}
+.separate-line {
+    clear: both;
+    height: 1px;
+    border-top: 1px solid var(--g-color-red-dark);
+    margin: 1em 0; padding: 0;
 }
