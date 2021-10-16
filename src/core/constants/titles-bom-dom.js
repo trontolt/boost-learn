@@ -96,6 +96,12 @@ export const titlesBomDomWithDescription = [
     },
     {
         title: "Event Loop",
-        shortDesc: "Event Loop - иструмент движка JS, который проверяет <b>Call Stack (стек вызовов)</b>, и если тот пустой - идет в <b>Task Queue (очередь задач)</b> и переносит оттуда первую задачу в Call Stack, при этом пропуская вперед очередь перерендера. Задача, попавшая в Сall Stack, выполняется моментально"
+        shortDesc: `Event Loop - иструмент движка JS, который проверяет <b>Call Stack (стек вызовов)</b>, и если тот пустой - идет в <b>Task Queue (очередь задач)</b> и переносит оттуда первую задачу в Call Stack, при этом пропуская вперед очередь перерендера. Задача, попавшая в Сall Stack, выполняется моментально <hr>
+        <div class='event-loop'>
+            <div class='web-api'><h4>WEB API</h4><br>(onClick, onScroll, setTimeout, Ajax etc.)<div class='web-pipe-bottom'></div></div>
+            <div class='task-queue'><h4>TASK QUEUE</h4><br>очередь задач<div class='task-pipe-bottom'></div></div>
+            <div class='render-queue'><h4>RENDER QUEUE</h4><br>(браузерная очередь рендера, примерно раз в 16мс)<div class='render-pipe-bottom'></div></div>
+            <div class='call-stack'><h4>CALL STACK</h4><br>(стек вызовов)<div class='event-loop-circle'>Event Loop</div></div>
+        </div>`
     }
 ]

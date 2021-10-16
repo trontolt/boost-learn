@@ -21,3 +21,67 @@ ul {
     display:inline-block;
     width: 100%;
 }
+
+/* Event loop illustration styles  starts*/
+.web-api, .task-queue, .render-queue, .call-stack {
+    width: 7rem;
+    height:7rem;
+    background-color: var(--g-color-red-dark);
+    position: relative;
+    margin-bottom: 2rem;
+    color:var(--g-color-light);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.web-pipe-bottom, .task-pipe-bottom, .render-pipe-bottom {
+    height: 2rem;
+    width: 2rem;
+    background-color:var(--g-color-red-dark);
+    position: absolute;
+}
+.web-pipe-bottom {
+    bottom: -2rem;
+    right: 0;
+}
+.render-queue {
+    margin-left: 10rem;
+    top:-5rem;
+}
+
+.task-pipe-bottom {
+    right:0;
+    bottom: -8rem;
+    height: 8rem;
+}
+.render-pipe-bottom {
+    left: -2rem;
+    bottom: -2rem;
+    height: 8rem;
+    transform: rotate(45deg);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 56px, calc(100% - 56px) 0%, 0% 0%);
+}
+.call-stack {
+    top: -4rem;
+}
+
+.event-loop-circle{
+    position: absolute;
+    background-color:var(--g-color-green-cadet);
+    right: 0;
+    top: -4rem;
+    height: 2rem;
+    width: 2rem;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
+
+/* Event loop illustration styles  ends*/
