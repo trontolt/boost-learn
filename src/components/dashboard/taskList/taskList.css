@@ -84,3 +84,7 @@ ul {
 }
 
 /* Event loop illustration styles  ends*/
+
+table, th, td {
+    border: 1px solid black;
+  }
