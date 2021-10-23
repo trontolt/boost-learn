@@ -2,15 +2,63 @@ import { useEffect } from 'react';
 import './header.css';
 
 const Header = props => {
-    const { shortDesc, description } = props.taskData;
+    const { title, shortDesc, description } = props.taskData;
+    const { setActiveTab, activeTab } = props;
+
     useEffect(() => {
         document.getElementsByClassName('header-content')[0].innerHTML =
+            `<b>${title}</b> ` +
             shortDesc +
             "<hr class='separate-line'>" +
             (description ? description : '');
-    }, [shortDesc, description]);
+    }, [title, shortDesc, description, activeTab]);
+
     return (
         <div className="header-container">
+            <div className="dash">
+                <div className="left-tabs">
+                    <button
+                        className={`tablinks  ${
+                            activeTab === 0 ? 'active' : ''
+                        }`}
+                        onClick={() => {
+                            setActiveTab(0);
+                        }}
+                    >
+                        JS
+                    </button>
+                    <button
+                        className={`tablinks  ${
+                            activeTab === 1 ? 'active' : ''
+                        }`}
+                        onClick={() => {
+                            setActiveTab(1);
+                        }}
+                    >
+                        React
+                    </button>
+                </div>
+                <div className="right-filters">
+                    <button
+                        className="tablinks"
+                        onClick={() => {
+                            console.log('filters');
+                        }}
+                    >
+                        Some filter
+                    </button>
+                </div>
+                <div className="right-menu">
+                    <button
+                        className="tablinks"
+                        onClick={() => {
+                            console.log('menu');
+                        }}
+                    >
+                        Some menu
+                    </button>
+                </div>
+            </div>
             <div className="header-content"></div>
         </div>
     );

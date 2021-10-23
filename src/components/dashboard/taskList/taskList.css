@@ -1,6 +1,7 @@
 .tasks-array-container {
     background-color: #F0F0F3;
     display: inline-block;
+    width: 100%;
 }
 .tasks-array-task {
     float:left;
