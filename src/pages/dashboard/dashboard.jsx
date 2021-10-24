@@ -52,13 +52,14 @@ const Dashboard = props => {
 };
 
 export default connect(
-    state => ({
-        tasksArray: state.main.tasksArray,
-        tasksBomDomArr: state.main.tasksBomDomArr,
-        tasksReactArr: state.main.tasksReactArr,
-        viewedTitleIndex: state.main.viewedTitleIndex,
-        viewedTopicIndex: state.main.viewedTopicIndex,
-        activeTab: state.main.activeTab,
+    ({ main }) => ({
+        //eject main from state.main like from event.target here onChange={({ target: { value } }) => onChangeFirstName(value)}
+        tasksArray: main.tasksArray,
+        tasksBomDomArr: main.tasksBomDomArr,
+        tasksReactArr: main.tasksReactArr,
+        viewedTitleIndex: main.viewedTitleIndex,
+        viewedTopicIndex: main.viewedTopicIndex,
+        activeTab: main.activeTab,
     }),
     {
         setViewedTitleIndex,
