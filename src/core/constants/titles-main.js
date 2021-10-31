@@ -15,7 +15,7 @@ export const titlesWithDescription = [
         description: "<a target='_blank' href='http://caniuse.com'>http://caniuse.com</a> - таблицы с информацией по поддержке движками браузеров новых возможностей"
     },
     {
-        title: "<script>",
+        title: "&lt;script>",
         shortDesc: "Добавляет JS в HTML <p><code><span class='code-example'>&lt;script src='file.js'&gt;&lt;/script&gt;<br>&lt;script&gt;alert(1);&lt;/script&gt; <hr> <code><span class='code-example'>&lt;script defer src='https://js'&gt&lt;/script&gt</span></code> - загружать скрипт в фоновом режиме. Запустить скрипт когда загрузится. Не блокировать html. <strong>Но DOMContentLoaded будет только после загрузки скрипта. Сохраняется порядок скриптов с defer.</strong> <br> <code><span class='code-example'>&lt;script async src='https://js'&gt&lt;/script&gt</span></code> - загружать скрипт в фоновом режиме. Запустить скрипт когда загрузится. не блокировать html. <strong>DOMContentLoaded не зависит от скрипта. Не сохраняется порядок выполнения.</strong> </span></code>",
         description: "<ul><li>Лучше выделять JS в отдельный файл, т.к. они загружаются отдельно и хранятся в кэше, что позволит другим подключающим данный скрипт страницам брать его из кэша</li><li>СЮда остальное</li></ul> <hr> Также скрипты можно загружать динамически <br> <code><span class='code-example'>let script = document.createElement('script'); <br> script.src = '/article/script-async-defer/long.js'; <br> script.async = false; - Так как динамические скрипты по умолчанию загружаются как async, то для сохранения порядка загрузки скриптов можем установить явно async -false <br> document.body.append(script);"
     }, 

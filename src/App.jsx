@@ -1,17 +1,26 @@
 import { BrowserRouter} from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import Header from '../src/components/header/header';
 import { AppRouter } from './routes/index';
 
 import './App.css';
 
+import { setActiveTab } from './core/actions/main.action';
 import { getTaskData } from './utils/main';
 
 function App(props) {
     const taskData = getTaskData(props);
+    const { activeTab, setActiveTab } = props;
+    const dispatch = useDispatch();
+    const setTab = tabIndex => dispatch(setActiveTab(tabIndex));
+
     return (
         <div className="App">
-            <Header taskData={taskData} />
+            <Header
+                taskData={taskData}
+                activeTab={activeTab}
+                setActiveTab={setTab}
+            />
             <BrowserRouter>
                 <AppRouter isLoggedIn={true} />
             </BrowserRouter>
@@ -26,6 +35,10 @@ export default connect(
         viewedTopicIndex: state.main.viewedTopicIndex,
         tasksArray: state.main.tasksArray,
         tasksBomDomArr: state.main.tasksBomDomArr,
+        tasksReactArr: state.main.tasksReactArr,
+        activeTab: state.main.activeTab,
     }),
-    {}
+    {
+        setActiveTab,
+    }
 )(App);

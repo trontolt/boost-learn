@@ -36,7 +36,8 @@ body {
   --g-color-blue-dark-2: #111E6C;
 
   /* gray */
-  --g-color-gray: #898B8C;
+  --g-color-gray: #adb3b4;
+  --g-color-gray-light: #cccfd1;
 
   /* green */
   --g-color-green-cadet: #5F9EA0;

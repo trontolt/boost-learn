@@ -16,3 +16,32 @@
     border-top: 1px solid var(--g-color-red-dark);
     margin: 1em 0; padding: 0;
 }
+
+/* Tabs */
+.dash {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+
+}
+
+
+.dash .left-tabs button {
+    background-color: transparent;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border-right: 1px solid black;
+    /* border: none;
+    outline: none;
+    cursor: pointer; */
+}
+
+.dash .left-tabs button:hover {
+    background-color: var(--g-color-gray-light); 
+}
+
+.dash .left-tabs button.active {
+    background-color: var(--g-color-gray);
+}
