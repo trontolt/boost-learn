@@ -5,12 +5,12 @@ import { AppRouter } from './routes/index';
 
 import './App.css';
 
-import { setActiveTab } from './core/actions/main.action';
+import { setActiveTab, filterChange } from './core/actions/main.action';
 import { getTaskData } from './utils/main';
 
 function App(props) {
     const taskData = getTaskData(props);
-    const { activeTab, setActiveTab } = props;
+    const { activeTab, setActiveTab, filterAction } = props;
     const dispatch = useDispatch();
     const setTab = tabIndex => dispatch(setActiveTab(tabIndex));
 
@@ -20,6 +20,7 @@ function App(props) {
                 taskData={taskData}
                 activeTab={activeTab}
                 setActiveTab={setTab}
+                filterAction={filterAction}
             />
             <BrowserRouter>
                 <AppRouter isLoggedIn={true} />
@@ -40,5 +41,6 @@ export default connect(
     }),
     {
         setActiveTab,
+        filterAction: filterChange,
     }
 )(App);

@@ -14,7 +14,13 @@ import { VIEW_TOPIC_REACT, VIEW_TOPIC_MAIN } from '../../core/constants/main';
 const Dashboard = props => {
     const dispatch = useDispatch();
     const [isModalOpen, toggleModalOpen] = useState(false);
-    const { tasksArray, tasksBomDomArr, tasksReactArr, activeTab } = props;
+    const {
+        tasksArray,
+        tasksBomDomArr,
+        tasksReactArr,
+        activeTab,
+        filterPhraze,
+    } = props;
     const setIndex = useCallback(
         (titleIndex, topicIndex) => {
             dispatch(setViewedTitleIndex(titleIndex));
@@ -46,6 +52,7 @@ const Dashboard = props => {
                 openModal={toggleModal}
                 tasksBomDomArr={tasksBomDomArr}
                 tasksReactArr={tasksReactArr}
+                filterPhraze={filterPhraze}
             />
             {isModalOpen && (
                 <Modal taskData={taskData} closeModal={toggleModal} />
@@ -63,6 +70,7 @@ export default connect(
         viewedTitleIndex: main.viewedTitleIndex,
         viewedTopicIndex: main.viewedTopicIndex,
         activeTab: main.activeTab,
+        filterPhraze: main.filterPhraze,
     }),
     {
         setViewedTitleIndex,
