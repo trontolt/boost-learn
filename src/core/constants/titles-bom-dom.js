@@ -1,3 +1,4 @@
+/* eslint-disable */
 import tableImg from '../../assets/images/table-example.png';
 import indexedDB from '../../assets/images/indexedDb.png';
 import nodeInsertLikeText from '../../assets/images/node-insert-like-text.png';

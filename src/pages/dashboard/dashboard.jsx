@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import TaskList from '../../components/dashboard/taskList/taskList';
 import Modal from '../../components/modal/modal';
@@ -15,10 +15,13 @@ const Dashboard = props => {
     const dispatch = useDispatch();
     const [isModalOpen, toggleModalOpen] = useState(false);
     const { tasksArray, tasksBomDomArr, tasksReactArr, activeTab } = props;
-    const setIndex = (titleIndex, topicIndex) => {
-        dispatch(setViewedTitleIndex(titleIndex));
-        dispatch(setViewedTopicIndex(topicIndex));
-    };
+    const setIndex = useCallback(
+        (titleIndex, topicIndex) => {
+            dispatch(setViewedTitleIndex(titleIndex));
+            dispatch(setViewedTopicIndex(topicIndex));
+        },
+        [dispatch]
+    );
 
     useEffect(() => {
         //to automatically choose default title, when tab changed
@@ -27,7 +30,7 @@ const Dashboard = props => {
         } else if (activeTab === 0) {
             setIndex(0, VIEW_TOPIC_MAIN);
         }
-    }, [activeTab]);
+    }, [activeTab, setIndex]);
 
     const taskData = getTaskData(props);
 
