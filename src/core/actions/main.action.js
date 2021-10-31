@@ -1,4 +1,4 @@
-import { VIEW_TITLE, VIEW_TOPIC, SET_ACTIVE_TAB } from "../constants/main";
+import { VIEW_TITLE, VIEW_TOPIC, SET_ACTIVE_TAB, FILTER_CHANGE } from "../constants/main";
 
 export const setViewedTitleIndex = (payload) => {
     return { 
@@ -18,5 +18,11 @@ export const setActiveTab = (payload) => {
     return {
         type: SET_ACTIVE_TAB,
         payload,
+    }
+}
+export const filterChange = payload => { 
+    return {
+        type: FILTER_CHANGE, 
+        payload 
     }
 }

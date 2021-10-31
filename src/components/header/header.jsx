@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import './header.css';
-
+import Filter from './filter/filter';
 const Header = props => {
     const { title, shortDesc, description } = props.taskData;
-    const { setActiveTab, activeTab } = props;
+    const { setActiveTab, activeTab, filterAction } = props;
 
     useEffect(() => {
         document.getElementsByClassName('header-content')[0].innerHTML =
@@ -39,14 +39,7 @@ const Header = props => {
                     </button>
                 </div>
                 <div className="right-filters">
-                    <button
-                        className="tablinks"
-                        onClick={() => {
-                            console.log('filters');
-                        }}
-                    >
-                        Some filter
-                    </button>
+                    <Filter filterAction={filterAction} />
                 </div>
                 <div className="right-menu">
                     <button

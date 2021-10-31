@@ -13,98 +13,91 @@ const TaskList = props => {
         openModal,
         tasksBomDomArr,
         tasksReactArr,
+        filterPhraze,
     } = props;
+    function filterCondition(task, filterPhraze) {
+        if (filterPhraze) {
+            const lowerPhraze = filterPhraze.toLowerCase();
+            return (
+                (task.title &&
+                    task.title.toLowerCase().includes(lowerPhraze)) ||
+                (task.shortDesc &&
+                    task.shortDesc.toLowerCase().includes(lowerPhraze)) ||
+                (task.description &&
+                    task.description.toLowerCase().includes(lowerPhraze))
+            );
+        } else {
+            return true;
+        }
+    }
     function tabRender() {
         const activeTab = props.activeTab;
+
         if (activeTab === 0) {
             return (
                 <React.Fragment>
-                    {tasksArray.map((task, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className="tasks-array-task"
-                                onDoubleClick={openModal}
-                                onClick={() => {
-                                    setViewedIndex(index, VIEW_TOPIC_MAIN);
-                                }}
-                            >
-                                {task.title}
-                            </div>
-                        );
-                    })}
+                    {tasksArray
+                        .filter(task => filterCondition(task, filterPhraze))
+                        .map((task, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="tasks-array-task"
+                                    onDoubleClick={openModal}
+                                    onClick={() => {
+                                        setViewedIndex(index, VIEW_TOPIC_MAIN);
+                                    }}
+                                >
+                                    {task.title}
+                                </div>
+                            );
+                        })}
                     <hr></hr>
-                    {tasksBomDomArr.map((task, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className="tasks-array-task"
-                                onDoubleClick={openModal}
-                                onClick={() => {
-                                    setViewedIndex(index, VIEW_TOPIC_BOM_DOM);
-                                }}
-                            >
-                                {task.title}
-                            </div>
-                        );
-                    })}
+                    {tasksBomDomArr
+                        .filter(task => filterCondition(task, filterPhraze))
+                        .map((task, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="tasks-array-task"
+                                    onDoubleClick={openModal}
+                                    onClick={() => {
+                                        setViewedIndex(
+                                            index,
+                                            VIEW_TOPIC_BOM_DOM
+                                        );
+                                    }}
+                                >
+                                    {task.title}
+                                </div>
+                            );
+                        })}
                 </React.Fragment>
             );
         } else if (activeTab === 1) {
             return (
                 <React.Fragment>
-                    {tasksReactArr.map((task, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className="tasks-array-task"
-                                onDoubleClick={openModal}
-                                onClick={() => {
-                                    setViewedIndex(index, VIEW_TOPIC_REACT);
-                                }}
-                            >
-                                {task.title}
-                            </div>
-                        );
-                    })}
+                    {tasksReactArr
+                        .filter(task => filterCondition(task, filterPhraze))
+                        .map((task, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className="tasks-array-task"
+                                    onDoubleClick={openModal}
+                                    onClick={() => {
+                                        setViewedIndex(index, VIEW_TOPIC_REACT);
+                                    }}
+                                >
+                                    {task.title}
+                                </div>
+                            );
+                        })}
                 </React.Fragment>
             );
         }
     }
-    return (
-        <div className="tasks-array-container">
-            {tabRender()}
-            {/* {tasksArray.map((task, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="tasks-array-task"
-                        onDoubleClick={openModal}
-                        onClick={() => {
-                            setViewedIndex(index, VIEW_TOPIC_MAIN);
-                        }}
-                    >
-                        {task.title}
-                    </div>
-                );
-            })}
-            <hr></hr>
-            {tasksBomDomArr.map((task, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="tasks-array-task"
-                        onDoubleClick={openModal}
-                        onClick={() => {
-                            setViewedIndex(index, VIEW_TOPIC_BOM_DOM);
-                        }}
-                    >
-                        {task.title}
-                    </div>
-                );
-            })} */}
-        </div>
-    );
+    return <div className="tasks-array-container">{tabRender()}</div>;
 };;
 
 export default TaskList;
