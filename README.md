@@ -1,3 +1,7 @@
+# This project developed to help you repeat JS before interview
+It is available in the web under [this path](https://boost-learn.vercel.app/dashboard)
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
