@@ -4,7 +4,7 @@ import {
     VIEW_TOPIC_BOM_DOM,
     VIEW_TOPIC_REACT,
 } from '../../../core/constants/main';
-import React, {useEffect} from 'react';
+import React from 'react';
 
 const TaskList = props => {
     const {
@@ -13,7 +13,6 @@ const TaskList = props => {
         openModal,
         tasksBomDomArr,
         tasksReactArr,
-        activeTab,
     } = props;
     function tabRender() {
         const activeTab = props.activeTab;
