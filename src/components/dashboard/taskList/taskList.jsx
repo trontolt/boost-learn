@@ -7,56 +7,69 @@ import {
 import React, {useEffect} from 'react';
 
 const TaskList = props => {
-    const { tasksArray, setViewedIndex, openModal, tasksBomDomArr, tasksReactArr, activeTab } =
-        props;
-    useEffect(()=>{}, [tabRender])
-    function tabRender () {
+    const {
+        tasksArray,
+        setViewedIndex,
+        openModal,
+        tasksBomDomArr,
+        tasksReactArr,
+        activeTab,
+    } = props;
+    function tabRender() {
         const activeTab = props.activeTab;
         if (activeTab === 0) {
-            return <React.Fragment>{tasksArray.map((task, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="tasks-array-task"
-                        onDoubleClick={openModal}
-                        onClick={() => {
-                            setViewedIndex(index, VIEW_TOPIC_MAIN);
-                        }}
-                    >
-                        {task.title}
-                    </div>
-                );
-            })}
-            <hr></hr>
-            {tasksBomDomArr.map((task, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="tasks-array-task"
-                        onDoubleClick={openModal}
-                        onClick={() => {
-                            setViewedIndex(index, VIEW_TOPIC_BOM_DOM);
-                        }}
-                    >
-                        {task.title}
-                    </div>
-                );
-            })}</React.Fragment>; 
+            return (
+                <React.Fragment>
+                    {tasksArray.map((task, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="tasks-array-task"
+                                onDoubleClick={openModal}
+                                onClick={() => {
+                                    setViewedIndex(index, VIEW_TOPIC_MAIN);
+                                }}
+                            >
+                                {task.title}
+                            </div>
+                        );
+                    })}
+                    <hr></hr>
+                    {tasksBomDomArr.map((task, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="tasks-array-task"
+                                onDoubleClick={openModal}
+                                onClick={() => {
+                                    setViewedIndex(index, VIEW_TOPIC_BOM_DOM);
+                                }}
+                            >
+                                {task.title}
+                            </div>
+                        );
+                    })}
+                </React.Fragment>
+            );
         } else if (activeTab === 1) {
-            return <React.Fragment>{ tasksReactArr.map((task, index)=>{
-                return (
-                    <div 
-                        key={index} 
-                        className="tasks-array-task" 
-                        onDoubleClick={openModal}
-                        onClick={() => {
-                            setViewedIndex(index, VIEW_TOPIC_REACT);
-                        }}
-                    >
-                        {task.title}
-                    </div>
-                );
-            })}</React.Fragment>
+            return (
+                <React.Fragment>
+                    {tasksReactArr.map((task, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="tasks-array-task"
+                                onDoubleClick={openModal}
+                                onClick={() => {
+                                    setViewedIndex(index, VIEW_TOPIC_REACT);
+                                }}
+                            >
+                                {task.title}
+                            </div>
+                        );
+                    })}
+                </React.Fragment>
+            );
         }
     }
     return (
