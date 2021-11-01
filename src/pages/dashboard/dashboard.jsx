@@ -55,7 +55,11 @@ const Dashboard = props => {
                 filterPhraze={filterPhraze}
             />
             {isModalOpen && (
-                <Modal taskData={taskData} closeModal={toggleModal} />
+                <Modal
+                    taskData={taskData}
+                    closeModal={toggleModal}
+                    isModalOpen={isModalOpen}
+                />
             )}
         </div>
     );
