@@ -9,7 +9,7 @@ import { setActiveTab, filterChange } from './core/actions/main.action';
 import { getTaskData } from './utils/main';
 
 function App(props) {
-    const taskData = getTaskData(props);
+    const taskData = getTaskData(props) || {};
     const { activeTab, setActiveTab, filterAction } = props;
     const dispatch = useDispatch();
     const setTab = tabIndex => dispatch(setActiveTab(tabIndex));

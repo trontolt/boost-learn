@@ -12,10 +12,33 @@ export const main = (state = initialState, action) =>  {
             return { ...state, activeTab: action.payload }
         }
         case FILTER_CHANGE: {
-            return {...state, filterPhraze: action.payload}
+            let filterPhraze = action.payload;
+            let {tasksArray, tasksBomDomArr, tasksReactArr} = initialState;
+            tasksArray = tasksArray.filter((task)=> filterCondition(task, filterPhraze));
+            tasksBomDomArr = tasksBomDomArr.filter((task)=> filterCondition(task, filterPhraze));
+            tasksReactArr = tasksReactArr.filter((task)=> filterCondition(task, filterPhraze));
+
+            return {...state, tasksArray, tasksBomDomArr, tasksReactArr, filterPhraze: action.payload}
         }
         default: 
             return state;
+    }
+}
+
+
+function filterCondition(task, filterPhraze) {
+    if (filterPhraze) {
+        const lowerPhraze = filterPhraze.toLowerCase();
+        return (
+            (task.title &&
+                task.title.toLowerCase().includes(lowerPhraze)) ||
+            (task.shortDesc &&
+                task.shortDesc.toLowerCase().includes(lowerPhraze)) ||
+            (task.description &&
+                task.description.toLowerCase().includes(lowerPhraze))
+        );
+    } else {
+        return true;
     }
 }
 
