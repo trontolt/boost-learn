@@ -6,7 +6,7 @@ export const titlesReactWithDescrition =[
     },
     {
         title: "Компоненты/пропсы",
-        shortDesc: "Компоненты: <ul><li>Функциональные: <br><code><span class='code-example'>function Welcome(props) { <br> return <h1>Привет, {props.name}</h1>; <br>}</span></code< </li><li> Классовые: <code><span class='code-example'>class Welcome extends React.Component { <br> render() { <br> return <h1>Привет, {this.props.name}</h1>; <br> } <br> } </span></code></ul>",
+        shortDesc: "Компоненты: <ul><li>Функциональные: <br><code><span class='code-example'>function Welcome(props) { <br> return &lt;h1>Привет, {props.name}</h1>; <br>}</span></code< </li><li> Классовые: <code><span class='code-example'>class Welcome extends React.Component { <br>constructor(props) {<br> super(props); <br> this.state = { hasError: false }; <br> this.handleClick = this.handleClick.bind(this); <br> this.listRef = React.createRef(); <br> }<br>  render() { <br> return &lt;div ref={this.listRef}>{this.props.name}</div> <br> } } </span></code></ul>",
         desctiption: ""
     },
     {
