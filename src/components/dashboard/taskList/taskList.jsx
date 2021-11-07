@@ -25,9 +25,10 @@ const TaskList = props => {
                         return (
                             <div
                                 key={index}
+                                tabIndex={0}
                                 className="tasks-array-task"
                                 onDoubleClick={openModal}
-                                onClick={() => {
+                                onFocus={() => {
                                     setViewedIndex(index, VIEW_TOPIC_MAIN);
                                 }}
                             >
@@ -40,9 +41,10 @@ const TaskList = props => {
                         return (
                             <div
                                 key={index}
+                                tabIndex={0}
                                 className="tasks-array-task"
                                 onDoubleClick={openModal}
-                                onClick={() => {
+                                onFocus={() => {
                                     setViewedIndex(index, VIEW_TOPIC_BOM_DOM);
                                 }}
                             >
@@ -59,9 +61,10 @@ const TaskList = props => {
                         return (
                             <div
                                 key={index}
+                                tabIndex={0}
                                 className="tasks-array-task"
                                 onDoubleClick={openModal}
-                                onClick={() => {
+                                onFocus={() => {
                                     setViewedIndex(index, VIEW_TOPIC_REACT);
                                 }}
                             >
