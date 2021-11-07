@@ -12,7 +12,7 @@ export const VIEW_TOPIC_REACT = 2;
 
 
 export const initialState = {
-    activeTab: 1,
+    activeTab: 0,
     viewedTitleIndex: 0,
     viewedTopicIndex: 0,
     tasksArray: titlesWithDescription,
