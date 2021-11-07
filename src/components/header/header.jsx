@@ -52,7 +52,7 @@ const Header = props => {
                     </button>
                 </div>
             </div>
-            <div className="header-content"></div>
+            <div className="header-content" tabIndex={0}></div>
         </div>
     );
 };

@@ -45,3 +45,6 @@
 .dash .left-tabs button.active {
     background-color: var(--g-color-gray);
 }
+.dash .left-tabs .tablinks:focus {
+    outline: 2px solid red;
+}
